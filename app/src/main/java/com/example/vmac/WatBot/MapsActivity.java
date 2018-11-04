@@ -3,6 +3,8 @@ package com.example.vmac.WatBot;
 import android.Manifest;
 import android.annotation.SuppressLint;
 import android.content.pm.PackageManager;
+import android.location.Address;
+import android.location.Geocoder;
 import android.location.Location;
 
 import android.os.Build;
@@ -13,6 +15,10 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
+import android.text.TextUtils;
+import android.util.Log;
+import android.view.View;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import com.google.android.gms.common.ConnectionResult;
@@ -30,6 +36,9 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
+import java.io.IOException;
+import java.util.List;
+
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback,
         GoogleApiClient.ConnectionCallbacks,
         GoogleApiClient.OnConnectionFailedListener,
@@ -41,6 +50,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     private Location lastLocation;
     private Marker currentUserLocationMarker;
     private static final int Request_User_Location_Code = 99;
+    private double lat, lng;
+    private int Radius =5000;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,16 +67,81 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         mapFragment.getMapAsync(this);
     }
 
+    public void onClick(View v){
 
-    /**
-     * Manipulates the map once available.
-     * This callback is triggered when the map is ready to be used.
-     * This is where we can add markers or lines, add listeners or move the camera. In this case,
-     * we just add a marker near Sydney, Australia.
-     * If Google Play services is not installed on the device, the user will be prompted to install
-     * it inside the SupportMapFragment. This method will only be triggered once the user has
-     * installed Google Play services and returned to the app.
-     */
+        String police = "police";
+        Object transferData[]=new Object[2];
+        GetNearByPlaces getNearByPlaces =new GetNearByPlaces();
+
+
+        switch (v.getId()){
+            case R.id.pto:
+                mMap.clear();
+                String url=getUrl(lat, lng, police);
+                transferData[0] = mMap;
+                transferData[1] = url;
+
+                getNearByPlaces.execute(transferData);
+                Toast.makeText(this, "Buscando lugares seguros...", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Mostrando lugares seguros", Toast.LENGTH_SHORT).show();
+
+                break;
+            case R.id.search:
+                EditText addressField = (EditText) findViewById(R.id.locationS);
+                String address = addressField.getText().toString();
+
+                List<Address> addressList = null;
+                MarkerOptions userMarkerOptions = new MarkerOptions();
+
+                if(!TextUtils.isEmpty(address)){
+                    Geocoder geocoder =new Geocoder(this);
+
+                    try {
+                        addressList=geocoder.getFromLocationName(address,6);
+
+                        if(addressList!= null){
+                            for (int i=0; i<addressList.size(); i++){
+                                Address userAddress =addressList.get(i);
+                                LatLng latLng =new LatLng(userAddress.getLatitude(), userAddress.getLongitude());
+                                userMarkerOptions.position(latLng);
+                                userMarkerOptions.title(address);
+                                userMarkerOptions.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE));
+                                mMap.addMarker(userMarkerOptions);
+
+                                mMap.moveCamera(CameraUpdateFactory.newLatLng(latLng));
+                                mMap.animateCamera(CameraUpdateFactory.zoomTo(10));
+                            }
+                        }else{
+                            Toast.makeText(this, "No se encontro la ubicacion", Toast.LENGTH_SHORT).show();
+                        }
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+
+
+                }else{
+                    Toast.makeText(this, "Porfavor escribe una ubicacion", Toast.LENGTH_SHORT).show();
+                }
+                break;
+
+
+
+        }
+    }
+
+    private String  getUrl(double lat,double lng,String police){
+        StringBuilder googleURL = new StringBuilder("https://maps.googleapis.com/maps/api/place/nearbysearch/json?");
+        googleURL.append("location=" + lat + ","+ lng);
+        googleURL.append("&radius=" + Radius);
+        googleURL.append("&type="+police);
+        googleURL.append("&sensor=true");
+        googleURL.append("&key="+ "AIzaSyBFnimxql15_kBwofUwV5KK-PTWpjx8Mr0");
+
+        Log.d("GoogleMapsActivity", "url = "+googleURL.toString());
+
+        return googleURL.toString();
+    }
+
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
@@ -126,6 +202,9 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
     @Override
     public void onLocationChanged(Location location) {
+
+        lat= location.getLatitude();
+        lng= location.getLongitude();
         lastLocation =location;
         if(currentUserLocationMarker !=null){
             currentUserLocationMarker.remove();
