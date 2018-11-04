@@ -13,4 +13,7 @@
     <string name="TTS_username"></string>  
     <string name="TTS_password"></string>
 
+    <string name="botonOculto">oculto</string>
+
+
 </resources>
