@@ -25,7 +25,7 @@ public class Main2Activity extends AppCompatActivity {
     private static final String TAG = "Main2Activity";
 
     private static final int ERROR_DIALOG_REQUEST =9001;
-    CardView card, maps;
+    CardView card, maps, cardE,cardvr;
     CardView cardt;
     TextView frase;
 
@@ -48,7 +48,9 @@ public class Main2Activity extends AppCompatActivity {
         frase.setTypeface(customFont);
 
         card = this.findViewById(R.id.card4);
+        cardE = this.findViewById(R.id.card1);
         cardt = this.findViewById(R.id.card3);
+        cardvr = this.findViewById(R.id.vr);
 
         card.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -56,6 +58,16 @@ public class Main2Activity extends AppCompatActivity {
 
                 Intent intent = new Intent(Main2Activity.this, MainActivity.class);
                 startActivity(intent);
+            }
+        });
+
+        card.setOnLongClickListener(new View.OnLongClickListener() {
+
+            public boolean onLongClick(View v) {
+
+                Intent intent = new Intent(Main2Activity.this, Lista_Crimi.class);
+                startActivity(intent);
+                return true;
             }
         });
 
@@ -67,7 +79,23 @@ public class Main2Activity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        cardE.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
 
+                Intent intent = new Intent(Main2Activity.this, Lista_Crimi.class);
+                startActivity(intent);
+            }
+        });
+
+        cardvr.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(Main2Activity.this, instruc.class);
+                startActivity(intent);
+            }
+        });
 
 
     }

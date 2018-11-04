@@ -60,7 +60,9 @@
         <activity
             android:name=".detalle"
             android:parentActivityName=".Busqueda_trabajos" />
-        <activity android:name=".incognito"></activity>
+        <activity android:name=".incognito" />
+        <activity android:name=".Lista_Crimi" />
+        <activity android:name=".instruc"></activity>
     </application>
 
 </manifest>
