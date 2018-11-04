@@ -4,30 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginTop="20dp"
+    android:layout_marginTop="70dp"
     android:background="@android:color/white"
     android:orientation="vertical"
-    tools:context=".Main2Activity">
+    tools:context=".Busqueda_trabajos">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:clipToPadding="false"
-        android:gravity="center"
-        android:orientation="horizontal">
-
-        <TextView
-            android:id="@+id/txtview"
-            android:layout_width="wrap_content"
-            android:layout_height="50dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="20dp"
-            android:text="La plataforma mas integra contra el abuso y la violencia a la mujer"
-            android:textAlignment="center"
-            android:textColor="@color/colorPrimary"
-            android:textSize="15dp"
-            android:textStyle="bold"></TextView>
-    </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -48,17 +29,18 @@
                 android:orientation="vertical">
 
                 <ImageView
-                    android:layout_width="64dp"
+                    android:layout_width="100dp"
                     android:layout_height="64dp"
-                    android:background="@drawable/cerclebackgroundpurple"
+                    android:background="@drawable/ibm"
                     android:padding="10dp"
-                    android:src="@drawable/ic_report_black_24dp"></ImageView>
+                    android:scaleType="fitXY"
+                    ></ImageView>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
-                    android:text="Diagnostico"
+                    android:text="IBM Gerente"
                     android:textStyle="bold"></TextView>
 
                 <View
@@ -90,17 +72,18 @@
                 android:orientation="vertical">
 
                 <ImageView
-                    android:layout_width="64dp"
+                    android:layout_width="100dp"
                     android:layout_height="64dp"
-                    android:background="@drawable/cerclebackgroundpurple"
+                    android:background="@drawable/ibm"
                     android:padding="10dp"
-                    android:src="@drawable/ic_work_black_24dp"></ImageView>
+                    android:scaleType="fitXY"
+                    ></ImageView>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
-                    android:text="Trabajos"
+                    android:text="IBM Desarrollador"
                     android:textStyle="bold"></TextView>
 
                 <View
@@ -126,7 +109,6 @@
         android:orientation="horizontal">
 
         <android.support.v7.widget.CardView
-            android:id="@+id/maps"
             android:layout_width="160dp"
             android:layout_height="190dp"
             android:layout_margin="10dp">
@@ -138,17 +120,18 @@
                 android:orientation="vertical">
 
                 <ImageView
-                    android:layout_width="64dp"
+                    android:layout_width="100dp"
                     android:layout_height="64dp"
-                    android:background="@drawable/cerclebackgroundpurple"
+                    android:background="@drawable/ibm"
                     android:padding="10dp"
-                    android:src="@drawable/ic_info_black_24dp"></ImageView>
+                    android:scaleType="fitXY"
+                    ></ImageView>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
-                    android:text="Informacion"
+                    android:text="IBM Desarrollador junior"
                     android:textStyle="bold"></TextView>
 
                 <View
@@ -179,17 +162,17 @@
                 android:orientation="vertical">
 
                 <ImageView
-                    android:layout_width="64dp"
+                    android:layout_width="100dp"
                     android:layout_height="64dp"
-                    android:background="@drawable/cerclebackgroundpurple"
+                    android:background="@drawable/ibm"
                     android:padding="10dp"
-                    android:src="@drawable/ic_face_black_24dp2"></ImageView>
+                    android:scaleType="fitXY"></ImageView>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
-                    android:text="Realidad Virtual"
+                    android:text="IBM Desarrollador Full Stack"
                     android:textStyle="bold"></TextView>
 
                 <View

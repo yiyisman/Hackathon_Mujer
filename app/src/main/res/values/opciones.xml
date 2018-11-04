@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="carreras">
+        <item>Ingenieria</item>
+        <item>Contabilidad</item>
+        <item>Comunicacion</item>
+        <item>Derecho</item>
+        <item>Medicina</item>
+        <item>Economia</item>
+    </string-array>
+    <string-array name="exp">
+        <item>Menos de 1 año</item>
+        <item>De 1 a 5 años</item>
+        <item>Mas de 5 años</item>
+    </string-array>
+    <string-array name="sueldo">
+        <item>Menos de 1 millon</item>
+        <item>De 1 a 3 millones </item>
+        <item>De 3 a 7 millones</item>
+        <item>De 7 a 10 millones</item>
+        <item>Mas de 10 millones</item>
+    </string-array>
+</resources>

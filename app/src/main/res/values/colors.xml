@@ -2,7 +2,7 @@
 <resources>
     <color name="colorPrimary">#F1424C</color>
     <color name="colorPrimaryDark">#F1424C</color>
-    <color name="colorAccent">#F1424C</color>
+    <color name="colorAccent">#f1424c</color>
     <color name="white">#FFFFFF</color>
 
     <color name="bg_bubble_self">#62caa6</color>
