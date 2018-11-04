@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/background_card">
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/card_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:elevation="3dp"
+        card_view:cardCornerRadius="1dp"
+        card_view:cardElevation="4dp"
+        card_view:cardUseCompatPadding="true"
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingBottom="5dp">
+
+            <ImageView
+                android:id="@+id/img_producto"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:clickable="true"
+                android:scaleType="centerCrop" />
+
+            <TextView
+                android:id="@+id/txt_nombrep"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/img_producto"
+                android:gravity="center_horizontal"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:paddingTop="5dp"
+                android:text="test"
+                android:textColor="@color/cardview_dark_background"
+                android:textSize="16sp"
+                android:textStyle="normal"
+                android:typeface="sans" />
+
+            <TextView
+                android:id="@+id/txt_puntosp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txt_nombrep"
+                android:gravity="center_horizontal"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:text="test"
+                android:textColor="@color/cardview_dark_background"
+                android:textSize="12sp"
+                android:textStyle="normal"
+                android:typeface="sans" />
+
+
+        </RelativeLayout>
+
+    </android.support.v7.widget.CardView>
+
+</LinearLayout>
