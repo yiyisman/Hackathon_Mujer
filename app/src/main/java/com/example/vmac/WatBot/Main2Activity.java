@@ -1,21 +1,24 @@
 package com.example.vmac.WatBot;
 
+import android.app.ActionBar;
 import android.app.Activity;
 import android.app.Dialog;
 import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.support.v7.widget.CardView;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.support.v7.widget.Toolbar;
 
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GoogleApiAvailability;
 
-public class Main2Activity extends Activity {
+public class Main2Activity extends AppCompatActivity {
 
     private static final String TAG = "Main2Activity";
 
@@ -29,11 +32,13 @@ public class Main2Activity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
 
+        Toolbar myToolbar = findViewById(R.id.my_toolbar);
+        setSupportActionBar(myToolbar);
+
         if(isServicesOK()){
             init();
         }
         frase=findViewById(R.id.txtview);
-
 
         Typeface customFont=Typeface.createFromAsset(getAssets(),"fonts/oswald.ttf");
         frase.setTypeface(customFont);
@@ -49,6 +54,7 @@ public class Main2Activity extends Activity {
                 startActivity(intent);
             }
         });
+
         cardt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

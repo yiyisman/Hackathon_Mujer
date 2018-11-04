@@ -20,7 +20,7 @@ public class Trabajos extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_trabajos);
 
-        carreras = findViewById(R.id.spinner);
+       carreras = findViewById(R.id.spinner);
         exp = findViewById(R.id.spinner2);
         sueldo = findViewById(R.id.spinner3);
 

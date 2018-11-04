@@ -85,7 +85,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        mContext = getApplicationContext();
+       mContext = getApplicationContext();
         conversation_username = mContext.getString(R.string.conversation_username);
         conversation_password = mContext.getString(R.string.conversation_password);
         workspace_id = mContext.getString(R.string.workspace_id);

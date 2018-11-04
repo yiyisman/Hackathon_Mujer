@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".detalle">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="10dp"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/editText3"
+            android:layout_width="326dp"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="DESARROLLADOR FULL STACK"
+            tools:layout_editor_absoluteX="31dp"
+            tools:layout_editor_absoluteY="25dp"
+            android:clickable="false"
+            android:cursorVisible="false"
+            android:focusable="false"
+            android:focusableInTouchMode="false"/>
+
+        <EditText
+            android:id="@+id/editText2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="Descripción"
+            app:layout_constraintTop_toBottomOf="@+id/editText3"
+            tools:layout_editor_absoluteX="31dp"
+            android:clickable="false"
+            android:cursorVisible="false"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            />
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="323dp"
+            android:layout_height="78dp"
+            android:text="Puesto de trabajo a tiempo completo,  consiste en cargo de jefe de desarrollo en varios grupos individuales, buscando resultados."
+            android:textSize="15dp"
+            app:layout_constraintTop_toBottomOf="@+id/editText2"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="34dp" />
+
+        <EditText
+            android:id="@+id/editText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="Requisitos"
+            app:layout_constraintTop_toBottomOf="@+id/textView4"
+            tools:layout_editor_absoluteX="34dp"
+            android:clickable="false"
+            android:cursorVisible="false"
+            android:focusable="false"
+            android:focusableInTouchMode="false"/>
+
+        <TextView
+            android:id="@+id/textView7"
+            android:layout_width="323dp"
+            android:layout_height="95dp"
+            android:layout_marginTop="8dp"
+            android:text="Desarrollador FullStack, con conocimientos en multiples herramientas de Backend y Frontend, principalmente en desarrollo web y videojuegos."
+            app:layout_constraintTop_toBottomOf="@+id/editText"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="31dp" />
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="125dp"
+            app:layout_constraintTop_toBottomOf="@+id/textView7"
+            app:srcCompat="@drawable/ic_file_upload_black_24dp"
+            tools:layout_editor_absoluteX="152dp" />
+    </LinearLayout>
+
+
+</LinearLayout>
